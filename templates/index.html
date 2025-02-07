@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Valentine's Gift Finder ❤️</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
+  <script type="module" src="{{url_for('static',filename='js/app.js')}}"></script>
+</head>
+<body class="bg-gradient-to-br from-[#ff758c] to-[#ff7eb3] min-h-screen font-sans p-5">
+  <div class="container max-w-2xl mx-auto bg-white/95 py-8 px-6 rounded-2xl shadow-xl relative overflow-hidden">
+    <div class="heart-animation"></div>
+    <h1 class="text-4xl text-pink-600 text-center mb-3 font-bold">🎁 AI Valentine's Gift Finder</h1>
+    <p class="text-lg text-indigo-600 text-center mb-8">Discover the perfect gift using AI magic!</p>
+    
+    <form id="giftForm" class="space-y-6">
+      <div class="space-y-4">
+        <div>
+          <label class="block text-pink-600 font-semibold mb-2">Partner's Name</label>
+          <input type="text" id="partnerName" class="w-full p-3 border-2 border-amber-200 rounded-lg focus:border-pink-500 focus:ring-4 focus:ring-pink-200 transition-colors" required>
+        </div>
+        
+        <div>
+          <label class="block text-pink-600 font-semibold mb-2">Key Interests/Hobbies</label>
+          <textarea id="interests" rows="3" class="w-full p-3 border-2 border-amber-200 rounded-lg focus:border-pink-500 focus:ring-4 focus:ring-pink-200 transition-colors" placeholder="e.g. Gardening, sci-fi movies, French cuisine..." required></textarea>
+        </div>
+
+        <div>
+          <label class="block text-pink-600 font-semibold mb-2">Favorite Things</label>
+          <input type="text" id="hobbies" class="w-full p-3 border-2 border-amber-200 rounded-lg focus:border-pink-500 focus:ring-4 focus:ring-pink-200 transition-colors" placeholder="e.g. Dark chocolate, vintage watches, house plants...">
+        </div>
+
+        <div>
+          <label class="block text-pink-600 font-semibold mb-2">Budget Range</label>
+          <select id="budget" class="w-full p-3 border-2 border-amber-200 rounded-lg focus:border-pink-500 focus:ring-4 focus:ring-pink-200 transition-colors">
+            <option value="under50">Under $50</option>
+            <option value="50-100">$50-$100</option>
+            <option value="100-200">$100-$200</option>
+            <option value="200+">$200+</option>
+          </select>
+        </div>
+      </div>
+
+      <button type="submit" class="w-full bg-pink-600 text-white py-4 px-8 rounded-full font-semibold hover:bg-pink-700 transition-transform transform hover:scale-105 flex items-center justify-center gap-2">
+        <span class="btn-text">Find Perfect Gift</span>
+        <div class="heart-loader"></div>
+      </button>
+    </form>
+
+    <div id="results" class="mt-8 space-y-6"></div>
+  </div>
+</body>
+</html>

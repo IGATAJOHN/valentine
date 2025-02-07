@@ -1,0 +1,72 @@
+.floating-heart {
+  position: absolute;
+  animation: float linear infinite;
+  pointer-events: none;
+}
+
+@keyframes float {
+  0% { 
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0.5;
+  }
+  100% { 
+    transform: translateY(-100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.heart-loader {
+  display: none;
+  width: 24px;
+  height: 24px;
+  position: relative;
+}
+
+.heart-loader::before,
+.heart-loader::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 20px;
+  background: white;
+  border-radius: 12px 12px 0 0;
+}
+
+.heart-loader::before {
+  left: 12px;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+
+.heart-loader::after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+  animation: pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: rotate(45deg) scale(1); }
+  50% { transform: rotate(45deg) scale(0.8); }
+}
+
+.loading .heart-loader {
+  display: block;
+}
+
+.loading .btn-text {
+  visibility: hidden;
+}
+
+.gift-card {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: appear 0.5s ease forwards;
+}
+
+@keyframes appear {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
